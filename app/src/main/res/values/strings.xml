@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">LoanGuru</string>
+    <string name="loan">Loan Amount:</string>
+    <string name="interest">Interest:</string>
+    <string name="salestax">Sales Tax:</string>
+    <string name="term">Term:</string>
+    <string name="years">Years</string>
+    <string name="months">Months</string>
+    <string name="downpayment">Down Payment:</string>
+    <string name="tradein">Trade-In:</string>
+    <string name="fees">Fees:</string>
+    <string name="rebates">Rebates:</string>
+    <string name="taxtrade">Trade-In before Tax</string>
+    <string name="rebatetax">Rebate before Tax</string>
+    <string name="payment">Payment</string>
+    <string name="princpal">Principal</string>
+    <string name="amount">Amount</string>
+    <string name="interestAmortization">Interest</string>
+    <string name="monthly">Monthly Payment:</string>
+
+</resources>

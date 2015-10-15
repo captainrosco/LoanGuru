@@ -1,0 +1,395 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".MainActivity"
+    android:background="@android:color/background_light"
+    android:paddingTop="2dp"
+    android:paddingBottom="2dp"
+    android:paddingRight="6dp"
+    android:paddingLeft="6dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/linearLayout3"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="4dp"
+        android:layout_marginLeft="4dp"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vehicle Amount: "
+                android:id="@+id/textView"
+                android:textSize="18sp"
+                android:layout_marginRight="6dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_loan"
+                android:inputType="numberDecimal"
+                android:layout_marginRight="8dp"
+                android:layout_weight=".5" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Interest: "
+                android:id="@+id/textView2"
+                android:textSize="18sp"
+                android:layout_marginRight="4dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_interest"
+                android:layout_weight=".2"
+                android:inputType="numberDecimal"
+                android:layout_marginRight="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="%"
+                android:id="@+id/textView4"
+                android:textSize="18sp"
+                android:layout_weight="0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sales Tax: "
+                android:id="@+id/textView8"
+                android:textSize="18sp"
+                android:layout_weight="0"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="4dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_tax"
+                android:layout_weight=".2"
+                android:inputType="numberDecimal"
+                android:textAlignment="center"
+                android:layout_marginRight="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="%"
+                android:id="@+id/textView6"
+                android:textSize="18sp"
+                android:layout_weight="0" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Term: "
+                android:id="@+id/textView9"
+                android:textSize="18sp"
+                android:layout_marginRight="4dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_term"
+                android:layout_weight=".2"
+                android:layout_marginRight="8dp"
+                android:inputType="numberDecimal"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Years"
+                android:id="@+id/radio_year"
+                android:layout_marginRight="8dp"
+                android:onClick="toggleYear"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Months"
+                android:onClick="toggleMonth"
+                android:id="@+id/radio_month" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout3"
+        android:background="#f0f0f0"
+        android:layout_above="@+id/calculate_button"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reductions (Optional)"
+            android:id="@+id/textView12"
+            android:gravity="center"
+            android:background="@color/lightprimarycolor" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Down Payment: "
+                android:id="@+id/textView7"
+                android:textSize="18sp"
+                android:layout_marginRight="4dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_down"
+                android:inputType="numberDecimal"
+                android:textAlignment="center"
+                android:layout_marginRight="8dp"
+                android:layout_weight=".5" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp">
+
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:text="Trade-In: "
+                android:id="@+id/textView10"
+                android:textSize="18sp"
+                android:layout_marginRight="4dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tradeIn_Amount"
+                android:inputType="numberDecimal"
+                android:textAlignment="center"
+                android:layout_marginRight="8dp"
+                android:layout_weight=".5" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fees:"
+                android:id="@+id/textView11"
+                android:textSize="18sp"
+                android:layout_marginRight="4dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/fees_amount"
+                android:layout_weight=".2"
+                android:inputType="numberDecimal"
+                android:layout_marginRight="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rebates:"
+                android:id="@+id/textView13"
+                android:textSize="18sp"
+                android:layout_weight="0"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="4dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rebates_amount"
+                android:layout_weight=".2"
+                android:inputType="numberDecimal"
+                android:textAlignment="center"
+                android:layout_marginRight="4dp"
+                android:focusable="true" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="4dp">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trade-In before Tax"
+                android:id="@+id/tradeInTax_check"
+                android:layout_weight="1" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rebate before Tax"
+                android:id="@+id/rebateTax_check"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="4dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$0.00"
+            android:id="@+id/text_total"
+            android:textSize="42sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/primary_text_light"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:freezesText="true"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/linearLayout4"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:padding="2dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monthly Payment: "
+                android:id="@+id/textView5"
+                android:layout_below="@+id/text_total"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginRight="8dp"
+                android:textSize="18sp"
+                android:textColor="@android:color/primary_text_light" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$0.00"
+                android:id="@+id/text_monthly"
+                android:layout_below="@+id/text_total"
+                android:layout_alignLeft="@+id/text_total"
+                android:layout_alignStart="@+id/text_total"
+                android:textSize="18sp"
+                android:layout_marginRight="8dp"
+                android:textColor="@android:color/primary_text_light"
+                android:freezesText="true"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/linearLayout2"
+            android:layout_below="@+id/text_total"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:padding="2dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Interest:"
+                android:id="@+id/textView3"
+                android:layout_below="@+id/text_total"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginRight="8dp"
+                android:textSize="19sp"
+                android:textColor="@android:color/primary_text_light" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$0.00"
+                android:id="@+id/text_interestTotal"
+                android:layout_below="@+id/text_total"
+                android:layout_alignLeft="@+id/text_total"
+                android:layout_alignStart="@+id/text_total"
+                android:textSize="19sp"
+                android:layout_marginRight="8dp"
+                android:textColor="@android:color/primary_text_light"
+                android:freezesText="true"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:id="@+id/calculate_button"
+        android:textSize="16sp"
+        android:onClick="calculateAfford"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/primary"
+        android:textColor="#ffffff" />
+
+
+</RelativeLayout>

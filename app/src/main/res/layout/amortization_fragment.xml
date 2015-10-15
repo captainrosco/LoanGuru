@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="2dp"
+        android:background="@color/lightprimarycolor"
+        android:id="@+id/linearLayout8">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Monthly Payment:  $"
+            android:id="@+id/monthly_Text" />
+
+        <EditText
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/slider_text"
+            android:layout_above="@+id/linearLayout7"
+            android:layout_toRightOf="@+id/monthly_Text"
+            android:layout_toEndOf="@+id/monthly_Text"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Values are Estimated"
+        android:id="@+id/textView26"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@android:color/tertiary_text_light"
+        android:textSize="12sp"
+        android:layout_below="@+id/linearLayout8"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="4dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout7"
+        android:layout_below="@+id/textView26"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:text="MO"
+            android:id="@+id/textView20"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_weight="1"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="Payment"
+            android:id="@+id/textView21"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_weight="1"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="Principal"
+            android:id="@+id/textView25"
+            android:layout_weight="1"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="Interest"
+            android:id="@+id/textView23"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_weight="1"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:text="Amount"
+            android:id="@+id/textView24"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/text_noData"
+            android:layout_toEndOf="@+id/text_noData"
+            android:layout_weight="1"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id = "@+id/amortization_list"
+        android:layout_above="@+id/adView"
+        android:layout_below="@+id/linearLayout7" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adUnitId="ca-app-pub-6023608391938513/2793906783"
+        ads:adSize="BANNER"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>
